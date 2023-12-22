@@ -10,3 +10,19 @@
    comments. */
 
    console.log("Comments make your code more readable by others.");
+
+   console.log(typeof "18");
+   console.log(typeof "3.2");
+
+   /*
+   multi-
+   line
+   comments
+   */ 
+  //single line
+  //comments
+
+  /* do programs with lots of comments run slower/take more power 
+  than programs without comments? 
+  */
+ 
