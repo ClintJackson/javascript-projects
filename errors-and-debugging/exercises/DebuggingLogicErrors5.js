@@ -6,23 +6,41 @@ let launchReady = false;
 let fuelLevel = 17000;
 let crewStatus = true;
 let computerStatus = 'green';
+let externalCheck = false;
+let internalCheck = false;
 
 if (fuelLevel >= 20000) {
    console.log('Fuel level cleared.');
-   launchReady = true;
+   externalCheck = true;
 } else {
    console.log('WARNING: Insufficient fuel!');
-   launchReady = false;
+   externalCheck = false;
 }
 
-console.log("launchReady = ", launchReady);
+console.log("External Check = ", externalCheck);
 
 if (crewStatus && computerStatus === 'green'){
    console.log('Crew & computer cleared.');
-   launchReady = true;
+   internalCheck = true;
 } else {
    console.log('WARNING: Crew or computer not ready!');
+   internalCheck = false;
+}
+
+
+if (externalCheck && internalCheck == true) {
+   launchReady = true;
+} else {
    launchReady = false;
 }
 
-console.log("launchReady = ", launchReady);
+console.log("internal Check = ", internalCheck);
+
+console.log("Launch ready status: ", launchReady);
+
+if (launchReady) {
+   console.log('10, 9, 8, 7, 6, 5, 4, 3, 2, 1...');
+   console.log('Liftoff!');
+} else {
+   console.log('Launch scrubbed.');
+}
