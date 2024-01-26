@@ -12,25 +12,15 @@
 function reverseCharacters (receivedString) {
     let workingString = [];
     if (typeof receivedString === 'string') {
-
-        if (receivedString.includes(', ')) {
-            workingString = receivedString.split(', ').reverse().join(', ');
-        } else if (receivedString.includes(';')) {
-            workingString = receivedString.split(';').reverse().join(';');
-        } else if (receivedString.includes(',')) {
-            workingString = receivedString.split(',').reverse().join(',');
-        } else if (receivedString.includes(" ")) {
-            workingString = receivedString.split(" ").reverse().join(' ');
-        } else if (receivedString.includes("")) {
-            workingString = receivedString.split("").reverse().join(" ");
-        }
+       workingString = receivedString.split('').reverse().join('');
+       
     } else if (typeof receivedString === "number") {
         receivedString = receivedString.toString();
         workingString = receivedString.split("").reverse().join("");
         return Number(workingString);
-
+ 
     }
-
+ 
     return workingString;
     } 
 
@@ -70,7 +60,7 @@ function reverseReverse(array) {
     }
     return newRevRev.reverse();
 }
-console.log(reverseReverse(arrayTest2));
+console.log(reverseReverse(arrayTest1));
 
 // Bonus Missions
 
