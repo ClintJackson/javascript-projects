@@ -9,6 +9,36 @@
 // 5. Use console.log(reverseCharacters(myVariableName)); to call the function and verify that it correctly reverses the characters in the string.
 // 6. Optional: Use method chaining to reduce the lines of code within the function.
 
+function reverseCharacters (receivedString) {
+    let workingString = [];
+    if (typeof receivedString === 'string') {
+
+        if (receivedString.includes(', ')) {
+            workingString = receivedString.split(', ').reverse().join(', ');
+        } else if (receivedString.includes(';')) {
+            workingString = receivedString.split(';').reverse().join(';');
+        } else if (receivedString.includes(',')) {
+            workingString = receivedString.split(',').reverse().join(',');
+        } else if (receivedString.includes(" ")) {
+            workingString = receivedString.split(" ").reverse().join(' ');
+        } else if (receivedString.includes("")) {
+            workingString = receivedString.split("").reverse().join(" ");
+        }
+    } else if (typeof receivedString === "number") {
+        receivedString = receivedString.toString();
+        workingString = receivedString.split("").reverse().join("");
+        return Number(workingString);
+
+    }
+
+    return workingString;
+    } 
+
+let testString1 = "this, is, a, test, string";
+let testNumber = 1234;
+console.log(reverseCharacters(testString1));
+console.log(reverseCharacters(testNumber));
+
 // Part Two: Reverse Digits
 
 // 1. Add an if statement to reverseCharacters to check the typeof the parameter.
@@ -20,6 +50,7 @@
 // Part Three: Complete Reversal
 
 // 1. Define and initialize an empty array.
+let newArray = [];
 // 2. Loop through the old array.
 // 3. For each element in the old array, call reverseCharacters to flip the characters or digits.
 // 4. Add the reversed string (or number) to the array defined in part ‘a’.
@@ -29,6 +60,17 @@
 let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
+
+
+
+function reverseReverse(array) {
+    let newRevRev = [];
+    for (let i = 0; i <array.length; i++) {
+        newRevRev.push(reverseCharacters(array[i]));
+    }
+    return newRevRev.reverse();
+}
+console.log(reverseReverse(arrayTest2));
 
 // Bonus Missions
 
