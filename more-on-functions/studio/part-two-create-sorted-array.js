@@ -1,13 +1,26 @@
-function findMinValue(arr){
-  let min = arr[0];
-  for (i = 0; i < arr.length; i++){
-    if (arr[i] < min){
-      min = arr[i];
-    }
+const input = require('readline-sync');
+
+function minimumInator (passedArray) {
+  let localMin = passedArray[0];
+  for (let i = 0; i < passedArray.length; i++) {
+      if (passedArray[i] < localMin) {
+          localMin = passedArray[i];
+      }
   }
-  return min;
+
+return localMin;
 }
 
+function numArraySorter (array) {
+
+  let sortedLeastToGreatest = [];
+  while (array.length > 0) {
+    sortedLeastToGreatest.push(minimumInator(array));
+    array.splice(array.indexOf(minimumInator(array)), 1);
+  }
+
+  return sortedLeastToGreatest;
+}
 //Create a function with an array of numbers as its parameter. This function will return a new array with the numbers sorted from least to greatest value.
 
 /*Within the function:
@@ -22,8 +35,23 @@ function findMinValue(arr){
 
 /* BONUS MISSION: Refactor your sorting function to use recursion below:
  */
+function recursiveSorter(unsortedArray, newArray = []) {
+  //basecase
+  if (unsortedArray.length === 1) {
+    newArray.push(unsortedArray[0]);
+  } else {
+    let userVal = input.question("Do you want ascending or descending order? Type a or d: ");
+    if (userVal.toLowerCase === "a") {
+      newArray.push(minimumInator(unsortedArray));
+      unsortedArray.splice(unsortedArray.indexOf(minimumInator(unsortedArray)), 1);
+      recursiveSorter(unsortedArray, newArray);
+    }
+  }
+}
 
 //Sample arrays for testing:
 let nums1 = [5, 10, 2, 42];
 let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
 let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
+
+console.log(numArraySorter(nums2));
