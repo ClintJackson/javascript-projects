@@ -60,7 +60,7 @@ function reverseReverse(array) {
     }
     return newRevRev.reverse();
 }
-console.log(reverseReverse(arrayTest1));
+console.log(reverseReverse(arrayTest3));
 
 // Bonus Missions
 
