@@ -1,1 +1,34 @@
 /* Start adding your styling below! */ 
+body {
+    background: repeating-radial-gradient(closest-side, #F63E02, #FF6201, #E57C04, #FAA300, #F3B700);
+}
+#main-outer-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+
+
+}
+
+#main-header{
+    background-image: url('../clouds_with_birds.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 50vw;
+    height: 20vh;
+    
+    
+}
+
+
+
+div{
+    border: 2px solid rgb(170, 57, 57);
+}
+
+p{
+    font-family:'Courier New', Courier, monospace;
+}
+
