@@ -1,0 +1,45 @@
+#mainHeader {
+    background-image: url("./exercises_pictures/column1.png");
+    text-align: center;
+    
+}
+
+#leftColumn, #rightColumn {
+
+    background-image: url("./exercises_pictures/column1.png");
+    height: 100vh;
+    width: 20vw;
+    background-size: 750%;
+    background-position: center;
+    background-repeat: repeat-y;
+    
+}
+
+
+#backgroundBody{
+    display: flex;
+    justify-content: space-between;
+    background-image: url("./exercises_pictures/rural_background.png");
+    background-size: cover;
+    background-position: center;
+    height: 100vh
+}
+
+#mainContent {
+    width: 60vw;
+}
+
+.subHeading {
+    white-space: nowrap;
+    font-size: 4vw;
+    
+}
+
+.section {
+    background-color: rgb(248, 248, 213, 0.2);
+    
+}
+
+h1 {
+    margin: 0;
+}
