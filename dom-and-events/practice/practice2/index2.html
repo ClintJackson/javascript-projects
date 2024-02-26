@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event Listeners, Event Types</title>
+        <link rel = "stylesheet" type = "text/css" href = "style2.css">
+
+    </head>
+    <body>
+        
+        <p id = "main-text" class = "orange" style ="font-weight: bold;">
+        Incredibly valuable text. 
+        </p>
+        <button id = "ring-button"> Ring Bell? </button>
+        
+        <script>
+            function youRang() {
+                document.getElementById("main-text").innerHTML += " you rang..?";
+                console.log("you rang..?");
+            }
+            function onMouseOver(){
+                button.style.backgroundColor = "blue";
+                button.style.border = "2px dashed red";
+                
+            }
+            function onMouseOut(){
+                button.style.backgroundColor = "";
+                button.style.border = "";
+            }
+            let button = document.getElementById("ring-button");
+            button.addEventListener("click", youRang);
+            button.addEventListener("mouseover", onMouseOver);
+            button.addEventListener("mouseout", onMouseOut);
+        </script>
+    </body>
+</html>
