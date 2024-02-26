@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>index1</title>
+        <link rel = "stylesheet" type = "text/css" href = "style1.css">
+        <script > /*How to insert external: src = "script1.js" */
+
+            //console.log("from inside the web page"); this doesn't work when 
+            //combined with a src = filename.js. Surprised. 
+
+            //using DOM variables: 
+            console.log("the page title:", document.title);
+            console.log("the protocol:", window.location.protocol);
+            
+        </script>
+    </head>
+
+    <body>
+        <h1>generic title</h1>
+        <p id = "main-text"> words about things...</p>
+        <script>
+            let p = document.getElementById("main-text");
+            console.log(p.innerHTML);
+            p.append("More words about things");
+            console.log(p.innerHTML);
+            //window.alert("test"); only option is "okay". Page not prevented from loading,
+            //unlike with window.confirm.
+            //window.confirm("Please confirm that you do, in fact, 'got this'"); 
+            //window.confirm prevents page load until "ok" is clicked. 
+            window.console.log("Test, test"); //puts to console, not page
+        </script>
+
+        <p id = "pogoLanes1">
+            Implementing "pogo stick only lanes" in urban areas is a visionary step towards reimagining city transportation, offering a unique blend of physical activity, environmental conservation, and sheer joy. These lanes encourage residents to embrace a form of commute that's not only eco-friendly, significantly reducing carbon emissions and traffic congestion, but also promotes health and fitness through a fun and engaging means of travel. Beyond its practical benefits, the introduction of pogo stick lanes injects a sense of whimsy and playfulness into the daily grind, transforming mundane commutes into exhilarating experiences. It's a bold move that stands as a testament to the city's commitment to innovative, sustainable urban planning and the well-being of its community, making the city a beacon of creativity and forward-thinking in the modern world.
+            <script>
+                let lanes = document.getElementById("pogoLanes1");
+                console.log(lanes.innerHTML);
+
+                let response = window.confirm("Do you approve of pogo lanes?")
+                if (response === true) {
+                    console.log("pogo lanes rule");
+                } else {
+                    console.log("well too bad, we're getting them");
+                }
+            </script>
+        </p>
+    </body>
+</html>
