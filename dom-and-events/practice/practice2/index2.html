@@ -31,5 +31,17 @@
             button.addEventListener("mouseover", onMouseOver);
             button.addEventListener("mouseout", onMouseOut);
         </script>
+
+        <button id = "clickMePlease"> click me plz </button>
+        <script>
+            let button2 = document.getElementById("clickMePlease");
+            button2.addEventListener("mouseover", onMouseOver);
+            button2.addEventListener("mouseout", onMouseOut);//note: this is wrong but funny for some reason lol. 
+            button2.addEventListener("click", function(event){
+                console.log("event type: ", event.type);
+                console.log("event target: ", event.target)
+                
+            });
+        </script>
     </body>
 </html>

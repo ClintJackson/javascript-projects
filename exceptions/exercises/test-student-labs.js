@@ -21,4 +21,13 @@ let studentLabs = [
   }
 ];
 
+let studentLabs2 = [
+  {
+    student: 'Blake',
+    myCode: function(num){
+      return Math.pow(num, num)
+    }
+  }
+]
+
 gradeLabs(studentLabs);

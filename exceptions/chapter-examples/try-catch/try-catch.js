@@ -1,5 +1,6 @@
 const input = require('readline-sync');
 
+
 let animals = [{name: 'cat'}, {name: 'dog'}];
 let index = Number(input.question("Enter index of animal:"));
 
