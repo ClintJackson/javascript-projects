@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Window Load Event</title>
+        <script>
+            //add load event handler to window
+            window.addEventListener("load", function(){
+                //put DOM code here to ensure elements have been loaded
+                console.log('window loaded');
+                let list = document.getElementById("lane-list");
+                list.addEventListener("mouseover", function(event){
+                    let element = event.target;
+                    element.innerHTML += ">";
+                    console.log("target", element);
+                })
+
+                let ring = document.getElementById("ring-button");
+                ring.addEventListener("click", function(event){
+                    console.log("ring ring");
+                });
+                
+                let knock = document.getElementById("knock-button");
+                knock.addEventListener("click", function(event){
+                    console.log("knock knock");
+                });
+            });
+        </script>
+    </head>
+    
+    <body>
+        <div id = "toolbar">
+            <button id = "ring-button">Ring Bell</button>
+            <button id = "knock-button"> Knock on door</button>
+        </div>
+        Mouseover Race
+        <ul id = "lane-list">
+            <li>Lane 1</li>
+            <li>Lane 2</li>
+            <li>Lane 3</li>
+        </ul>
+    </body>
+</html>
