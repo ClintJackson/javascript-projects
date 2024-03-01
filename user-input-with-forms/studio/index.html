@@ -4,8 +4,31 @@
 	<meta charset="utf-8">
 	<script>
 		// TODO: create a handler
+		function setSearchEngine(){
+			let actions = {
+				"google": "https://www.google.com/search",
+				"duckDuckGo" : "https://duckduckgo.com/",
+				"bing" : "https://www.bing.com/search",
+				"ask" : "https://www.ask.com/web",
+			};
+			let form = document.getElementById("searchForm");
+
+			let engine1 = document.querySelector("input[name=engine]:checked");
+			
+
+			let website = actions[engine1.value];
+			form.setAttribute("action", website);
+		
+			console.log("searching...");
+		}
+
+
+
     window.addEventListener("load", function(){
         // TODO: register the handler
+		
+		let search = document.getElementById("searchForm");
+		search.addEventListener("submit", setSearchEngine);
     });
 	</script>
 </head>
@@ -13,7 +36,36 @@
 <body>
 
 	<form id="searchForm">
+		<input type = "text" name ="q">
+		<label><input type ="radio" name = "engine" value = "google"/> Google</label>
+		<label><input type ="radio" name = "engine" value = "duckDuckGo"/> DuckDuckGo</label>
+		<label><input type ="radio" name = "engine" value = "bing"/> Bing</label>
+		<label><input type ="radio" name = "engine" value = "ask"/> Ask</label>
+
+		<input type="submit" value ="search" />
+
+
     <!-- TODO: add form elements -->
 	</form>
 
 </body>
+
+
+
+<!-- 
+	Label: Google. 
+	Value: google
+	search URL: https://www.google.com/search
+
+	Label: DuckDuckGo
+	Value: duckDuckGo
+	SearchURL: https://duckduckgo.com/
+
+	Label: Bing
+	value: bing
+	Search URL: https://www.bing.com/search
+
+	Label: Ask
+	value: ask
+	search URL: https://www.ask.com/web
+ -->
