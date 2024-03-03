@@ -1,9 +1,13 @@
 function gradeLabs(labs) {
+  try{
   for (let i=0; i < labs.length; i++) {
     let lab = labs[i];
     let result = lab.runLab(3);
     console.log(`${lab.student} code worked: ${result === 27}`);
   }
+} catch (TypeError){
+  return "Error thrown";
+}
 }
 
 let studentLabs = [
@@ -30,4 +34,4 @@ let studentLabs2 = [
   }
 ]
 
-gradeLabs(studentLabs);
+console.log(gradeLabs(studentLabs2));
