@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Form submission using POST</title>
+        <script src = "./script2.js"></script>
+        <link href = "./style2.css" rel = "stylesheet" type = "text/css">
+    </head>
+
+    <body>
+        <!-- todo: fix the action until it works  -->
+        <form action="" method = "GET">
+            <label for="username">Username <input type = "text" id = "username" class = "username"/></label>
+            <label for="team">Team Name</label><input type="text" id = "team" class = "team"/>
+            <button>Submit</button>
+        </form>
+        <div>
+            <form action="https://handlers.education.launchcode.org/request-parrot">
+                <label for="username"> input username
+                    <input type="text" id = "username" name = "input"/>
+                </label>
+                <label for="missionDescription"> Mission Description <br>
+                    <textarea name = "mission description" id = "missionDescription" placeholder="input mission description"></textarea>
+                </label>
+                <label for="passCode">
+                    <input type="password" id = "passCode" name = "passCode" placeholder="enter password here"/>
+                </label>
+                <button>Send report</button>
+            </form>
+        </div>
+
+        <div>
+            <form action="https://handlers.education.launchcode.org/request-parrot">
+                <label for="flightDate"> Select Flight Date
+                    <input type="date" id = "flightDate" name = "flightDate"/>
+                </label>
+                <label for="emailAddress">
+                    <input type="email" name="emailAddress" id="emailAddress" placeholder="enter email address here"/>
+                </label>
+                <label for="fuelTemp">
+                    <input type="number" name="fuelTemp" id="fuelTemp" placeholder="enter fuel temp here"/>
+                </label>
+                <button>Submit</button>
+            </form>
+        </div>
+        <div>
+            <h3>Check something</h3>
+            <form action="https://handlers.education.launchcode.org/request-parrot" class = "checkbox-container"> 
+               
+            <div class = "checkbox-container">
+            
+                <label for="signUpYes"> Sign Up
+                    <input type="checkbox" id = "signUpYes" name = "signup"/>
+                </label>
+            </div>
+            <div class = "checkbox-container">
+                <label for="signUpNo"> Don't sign up
+                    <input type="checkbox" name="signup" id="signUpNo"/>
+                </label>
+            </div>
+            <button>Submit</button>
+            </form>
+        </div>
+        <div>
+            <h3>Radio buttons, one at a time</h3>
+            <form action="https://handlers.education.launchcode.org/request-parrot">
+                
+                <div class = "checkbox-container">
+                    <label> Rough
+                        <input type="radio" name="flightRating" value = "rough"/>
+                    </label>
+                    <label >Few Bumps
+                        <input type="radio" name = "flightRating" value = "fewBumps"/>
+                    </label>
+                    <label for="">Smooth
+                        <input type="radio" name = "flightRating" value = "smooth">
+                    </label>
+                </div>
+                <label for="">
+                    <button>Submit report</button>
+                </label>
+            </form>
+        </div>
+        <div>
+            <form action="https://handlers.education.launchcode.org/request-parrot">
+                <div class = "checkbox-container">
+                    <label>Operation Code: 
+                        <select name="operation" id="">
+                            <option value="">Select An Option</option>
+                            <option value="1"> Simulation</option>
+                            <option value="2">Rocket Test</option>
+                            <option value="3">Crew Related</option>
+                        </select>
+                    </label>
+                </div>
+                <button>Send report</button>
+            </form>
+        </div>
+
+    </body>
+</html>

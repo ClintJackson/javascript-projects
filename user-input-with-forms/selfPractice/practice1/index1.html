@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Examples</title>
+        <script src = "script.js"></script>
+    </head>
+    <body>
+        
+        <form> <!-- without input element, form displays nothing -->
+            <input type = "checkbox" name = "test input"/> check the box bro
+            <!-- default is "text". other options: checkbox, radio, button --> 
+        </form>
+
+        <form>
+            <label for="username"> Username <!-- labels used to wrap inputs. Provides label to be associated with the specified input element. the "for" corresponds to *first* matching ID-->
+                <input type="text" id = "username" name = "username"/> 
+            </label>
+            <label for = "teamname"> Team Name <input type = "text" id = "teamname" name = "teamname"/></label>
+            <!-- When using the label for = "idname", you don't have to have the inputs nested. -->
+        </form>
+
+        <form>
+            <label for="firstName">First Name</label>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name = "lastName" placeholder = "last Name"/> 
+            <input type="text" id="firstName" name = "firstName" placeholder = "first name"/>
+            <button>Submit button</button> 
+            <!-- can do submits like above or input type = submit -->
+            <input type="submit"/>
+        </form>
+    </body>
+</html>
