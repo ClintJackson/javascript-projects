@@ -1,0 +1,29 @@
+div {
+    background-color: #f0f0f0; /* Light grey background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Spacing inside the div */
+    max-width: 300px; /* Maximum width of the div */
+    margin: auto; /* Center the div horizontally */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    font-family: 'Arial', sans-serif; /* Modern font */
+}
+
+ul {
+    list-style-type: none; /* Remove default list bullets */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+li {
+    background-color: #ffffff; /* White background for each list item */
+    margin-bottom: 8px; /* Space between list items */
+    padding: 10px; /* Spacing inside each list item */
+    border-radius: 4px; /* Rounded corners for list items */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for list items */
+    font-size: 14px; /* Font size */
+}
+
+li:first-child {
+    font-weight: bold; /* Make the first item bold */
+    color: #333; /* Darker text for contrast */
+}
