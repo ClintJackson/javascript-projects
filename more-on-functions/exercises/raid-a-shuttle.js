@@ -1,7 +1,7 @@
 function checkFuel(level) {
-  if (level > 100000){
+  if (level > 100_000){
     return 'green';
-  } else if (level > 50000){
+  } else if (level > 50_000){
     return 'yellow';
   } else {
     return 'red';
@@ -18,12 +18,46 @@ function holdStatus(arr){
   }
 }
 
-let fuelLevel = 200000;
+let fuelLevel = 200_000;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
 console.log("Fuel level: " + checkFuel(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
 
+
+let totallyNormalFunction = a => {
+  if (checkFuel(a)==='green') {
+    return a - 100_001;
+  } else if (checkFuel(a) === "yellow"){
+    return a - 50_001;
+  } else {
+    return a;
+  }
+}
+
+
+let shopping = ch => {
+  let shoppingBag = [];
+  for (let i = 0; i < ch.length; i++){
+    if (ch[i].includes("gold") || ch[i].includes("space suits")){
+      shoppingBag.push(ch[i]);
+      cargoHold.splice(i, 1, "hay");
+    }
+  }
+  return shoppingBag;
+}
+
+
+
+
+let irs = (fuelLvl, cargo) =>{
+  let fuel_taken = totallyNormalFunction(fuelLvl);
+  let cargo_taken = shopping(cargo);
+  return `Raided ${fuel_taken}kg of fuel from the tanks, 
+  and stole ${cargo_taken[0]} and ${cargo_taken[1]} from the cargo hold.`
+}
+
+console.log(irs(fuelLevel, cargoHold));
 /* Steal some fuel from the shuttle:
  * /
  
@@ -54,4 +88,4 @@ console.log("Hold status: " + holdStatus(cargoHold));
 //b). Call your anonymous fuel and cargo functions from within irs.
 
 //c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold."
-
+*/

@@ -12,4 +12,17 @@ b) Replace any strings with “ARRR!”
 c) Print the new array to confirm your work.
 */
 
-let arr = ['Elocution', 21, 'Clean teeth', 100];
+let arr = ['Elocution', 21, 'Clean teeth', 100, {apple: 1, Bee: 2}];
+
+let functionator = input =>{
+    if (typeof input === "number"){
+        return input * 3;
+    }
+    if (typeof input === "string"){
+        return "ARRR!";
+    }
+    return input;
+}
+
+let changedArr = arr.map(functionator);
+console.log(changedArr);
