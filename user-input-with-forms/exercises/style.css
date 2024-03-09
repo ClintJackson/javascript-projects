@@ -1,1 +1,11 @@
 /*/ Code Your Solution Below /*/
+label {
+    display: block;
+    margin-bottom: 7px;
+    padding: 3px;
+}
+
+input:hover{
+    background: #eee;
+    cursor:pointer;
+}

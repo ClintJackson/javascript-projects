@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Validation</title>
+        <style>
+            label {display: block;}
+            body {padding: 30px; }
+        </style>
+    </head>
+    <script>
+        window.addEventListener("load",result =>{
+            let form = document.querySelector("form");
+            form.addEventListener("submit", event =>{
+                let usernameInput = document.querySelector("input[name=username]");
+                let teamName = document.querySelector("input[name = team]");
+                let alertMessage = "";
+                if (usernameInput.value === "" || teamName.value === "") {
+                    alertMessage += ("All fields are required!\n");
+                } 
+                if (usernameInput.value.length < 7){
+                    alertMessage += ("username length too short\n")
+                }
+                //alert the current value found in the username input
+                
+                alert(alertMessage);
+                event.preventDefault();
+            });
+        });
+    </script>
+    <body>
+        
+        <form action="https://handlers.education.launchcode.org/request-parrot" method="POST">
+            <label for="">Username <input type = "text" name = "username" /></label>
+            <label for="">Team Name <input type = "text" name = "team" /></label>
+            <button>submit</button>
+        </form>
+    </body>
+</html>

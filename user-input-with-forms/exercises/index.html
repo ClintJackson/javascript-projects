@@ -3,13 +3,64 @@
   <head>
     <meta charset="utf-8">
     <title>Rocket Simulation</title>
-    <style>
-      label { display: block; margin-bottom: 7px;}
-    </style>
+    <link rel="stylesheet" href="style.css" type = "text/css">
   </head>
   <body>
     <!-- TODO: add form here -->
-    
+    <script src = "./script.js"></script>
+    <form method = "POST" action = "https://handlers.education.launchcode.org/request-parrot">
+      <label for="">Test Name
+        <input type="text" name = "testName" id = "testName"/>
+      </label>
+
+      <label for=""> Test Date
+        <input type="date" name = "testDate" id = "testDate" />
+      </label>
+
+      <label for=""> Rocket Type
+        <select name = "rocketType" id = "rocketType">
+          <option value="0">Select an option</option>
+          <option value="1">Brant</option>
+          <option value="2">Lynx</option>
+          <option value="3">Orion</option>
+          <option value="4">Terrier</option>
+        </select>
+      </label>
+
+      <label for="">Number of Rocket Boosters
+        <input type="number" name = "boosterCount" min = "1" max = "9" id = "rocketBoosterCount"/>
+      </label>
+
+      <fieldset>
+        <legend>Select Wind Rating</legend>
+        <div>
+          <label for="">
+            <label for="noWind"> No Wind
+              <input type="radio" value = "0" id = "noWind" name = "windRating" required/>
+            </label>
+            <label for="mild"> Mild
+              <input type="radio" value = "10" id = "mild" name = "windRating">
+            </label>
+            <label for="strong"> Strong
+              <input type="radio" value = "20" id="strong" name="windRating">
+            </label>
+          </label>
+          </div>
+        </fieldset>
+
+      <fieldset>
+        <legend>Use Production Grade Servers?</legend>
+        <div>
+          <label for=""> Yes
+            <input type="checkbox" name = "productionServers" value = "yes" id = "yesProductionGrade" required />
+          </label>
+          <label for=""> No
+            <input type = "checkBox" value = "no" id = "noProductionGrade"/>
+          </label>
+        </div>
+      </fieldset>
+      <button id = "formSubmit">Run Simulation</button>
+    </form>
 
     <p>WARNING: This ONLY works in <b>replit</b> if this "result" page is opened in its own window. Click the icon that shows a box with an arrow coming out of it.
     </p>
